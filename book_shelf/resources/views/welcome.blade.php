@@ -42,6 +42,9 @@
                 @foreach ($books as $books)
                     <p>titre : {{ $books->titre }}</p>
                     <p>auteur.ice : {{ $books->auteur }}</p>
+                    <p>Numero d'éditeur: {{ $books->id_editeur }}</p>
+                    <p>Nom d'éditeur : {{ $books->nom_editeur }}</p>
+                    <p>ISBN : {{ $books->id }}</p>
                 @endforeach
             </article>
         </section>
