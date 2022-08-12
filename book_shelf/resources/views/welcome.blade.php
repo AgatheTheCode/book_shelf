@@ -39,6 +39,10 @@
             <article class="flex" role="article premier">
                 <p>ou c kon mé le css déjà ???? :O </p>
                 <p> ok c bon lol </p>
+                @foreach ($books as $books)
+                    <p>titre : {{ $books->titre }}</p>
+                    <p>auteur.ice : {{ $books->auteur }}</p>
+                @endforeach
             </article>
         </section>
         <section class="flex" role="livres à l'affiche">
