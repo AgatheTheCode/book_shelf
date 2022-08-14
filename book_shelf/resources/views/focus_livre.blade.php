@@ -12,9 +12,9 @@
                         <img class="flex"src="{{ asset('image/cover/'.$books->couverture) }}.png" alt={{ $books->titre }} {{ $books->auteur }} cover>
                     </a>
                     <p>auteur.ice : {{ $books->auteur }}</p>
+                    <p>ISBN : {{ $books->id }}</p>
                     <p>Numero d'éditeur: {{ $books->id_editeur }}</p>
                     <p>Nom d'éditeur : {{ $books->nom_editeur }}</p>
-                    <p>ISBN : {{ $books->id }}</p>
 
                 </div>
                 @endforeach
@@ -29,4 +29,3 @@
         </section>
     </main>
     @stop
-

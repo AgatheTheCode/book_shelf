@@ -399,3 +399,11 @@ img{
     align-items: center;
     margin: auto;
 }
+.header_nav {
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    margin:0 1em 0 0;
+    padding: .15em;
+}
