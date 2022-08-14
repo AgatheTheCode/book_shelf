@@ -19,4 +19,19 @@ class function_select extends Controller
 
         //
     }
+    public function focus_livre($id)
+    {
+        $id = $_POST[':id'];
+
+        $book = DB::select('
+        select *,nom_editeur from books 
+        INNER JOIN editeur_books 
+        ON editeur_books.id=books.id_editeur where books.id=:id');
+
+
+        
+        return view('focus_livre', ['books' => $book,]);
+
+        //
+    }
 }

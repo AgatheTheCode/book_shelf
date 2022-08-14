@@ -14,4 +14,11 @@ use App\Http\Controllers\function_select;
 |
 */
 
-Route::get('/', [function_select::class, 'select_all_books']);
+Route::get('/', [function_select::class, 'select_all_books','focus_livre($id)']);
+
+
+Route::get('/focus_livre', [function_select::class, 'focus_livre($id)']);
+
+// Route::get('/focus_livre', function () {
+//         return view('focus_livre');
+//     });
