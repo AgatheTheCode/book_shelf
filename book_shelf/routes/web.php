@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\function_select;
+use App\Http\Controllers\render_controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +14,9 @@ use App\Http\Controllers\function_select;
 |
 */
 
-Route::get('/', [function_select::class, 'select_all_books','focus_livre($id)']);
+Route::get('/', [render_controller::class, 'render_all_books']);
 
-
-Route::get('/focus_livre', [function_select::class, 'focus_livre($id)']);
+Route::get('/focus_livre/{$id}', [render_controller::class, 'detail_livre']);
 
 // Route::get('/focus_livre', function () {
 //         return view('focus_livre');
