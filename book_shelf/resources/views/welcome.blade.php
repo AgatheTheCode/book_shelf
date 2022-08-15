@@ -11,7 +11,7 @@
                     <p>titre : {{ $books->titre }}</p>
                     {{-- <a href="focus_livre.php?id={{ $books->id }}"> --}}
                         {{-- <a href="{{ url("/focus_livre/{$books->id}") }}"> --}}
-                            <a href="{{ url("/focus_livre") }}">
+                        <a href="{{ route('livre.details', $books->id) }}" class="lien flex">
                         <img class="flex"src="{{ asset('image/cover/'.$books->couverture) }}.png" alt={{ $books->titre }} {{ $books->auteur }} cover>
                     </a>
                     <p>auteur.ice : {{ $books->auteur }}</p>
