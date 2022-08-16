@@ -4,14 +4,15 @@
     <main role="main" class="flex main">
         <section class="flex" role="présentation">
             <article class="flex" role="article premier">
-                <p>ou c kon mé le css déjà ???? :O </p>
-                <p> ok c bon lol </p>
+                {{-- <p>ou c kon mé le css déjà ???? :O </p>
+                <p> ok c bon lol </p> --}}
                 @foreach ($books as $books)
                 <div class="div_book">
                     <p>titre : {{ $books->titre }}</p>
                     {{-- <a href="focus_livre.php?id={{ $books->id }}"> --}}
-                        {{-- <a href="{{ url("/focus_livre/{$books->id}") }}"> --}}
-                        <a href="{{ route('livre.details', $books->id) }}" class="lien flex">
+                        <a href="{{ URL('/livre_details/'.$books->id )}}"">
+                        {{-- <a href="{{ route("livre_details")}}" class="lien flex" role="detail de {{ $books->titre }}"> --}}
+                            
                         <img class="flex"src="{{ asset('image/cover/'.$books->couverture) }}.png" alt={{ $books->titre }} {{ $books->auteur }} cover>
                     </a>
                     <p>auteur.ice : {{ $books->auteur }}</p>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class render_controller extends select_controller
 {
@@ -11,10 +12,15 @@ class render_controller extends select_controller
         $books_all = select_controller::select_all_books();
         return View('welcome', ['books' => $books_all]);
     }
+    public function render_details_livre(){
+        $livre = select_controller::select_all_books();
+        $id = DB::table('Books')->get();
 
-    public function render_this_book($id){
-        // $books_all = select_controller::with('focus_livre')->findOrFail($id);
-        // return view('focus_livre{$id}', ['books' => $books_all,]);
-        return view('focus_livre.id', ['Id'=> $id]);
+        // dd($id, $livre);
+
+        return View('livre_details', ['books'=> $livre,
+                                'id'=>$id]);
     }
+
 }
+

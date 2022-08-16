@@ -20,15 +20,6 @@ class select_controller extends Controller
         $this->isbn=$id;
     }
 
-    // public function detail_livre(){
-        
-    //     $book =select_controller::where('id',$this->id)->definition();
-                
-    //     return view('focus_livre{$id}', ['books' => $book,])->layout('views.focus_livre');
-
-        
-    // }
-
     public function select_all_books()//SQL de selection de tout les livres & des éditeurs
     {
         $books_all = DB::select('
@@ -38,11 +29,6 @@ class select_controller extends Controller
         return $books_all;
 
 
-    }
-    public function focus_livre($id)//SQL de tri par id
-    {
-        $book = DB::table('Books')->lists('id');
-        var_dump($book);
     }
 
 

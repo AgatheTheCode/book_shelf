@@ -16,8 +16,4 @@ use App\Http\Controllers\render_controller;
 
 Route::get('/', [render_controller::class, 'render_all_books']);
 
-Route::get('/focus_livre/{id}', [render_controller::class, 'focus_livre'])->name('livre.details');
-
-// Route::get('/focus_livre', function () {
-//         return view('focus_livre');
-//     });
+Route::get('livre_details/{id}', [render_controller::class, 'render_details_livre']);
