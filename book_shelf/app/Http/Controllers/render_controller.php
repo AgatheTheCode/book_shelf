@@ -12,14 +12,22 @@ class render_controller extends select_controller
         $books_all = select_controller::select_all_books();
         return View('welcome', ['books' => $books_all]);
     }
-    public function render_details_livre(){
+
+
+
+    public function render_details_livre(Request $request, $id)
+    {
         $livre = select_controller::select_all_books();
         $id = DB::table('Books')->get();
 
-        // dd($id, $livre);
+        $uri = $request->path();
+        $input = $request->only(['id']);
 
-        return View('livre_details', ['books'=> $livre,
-                                'id'=>$id]);
+dd($request->input('id'));
+        dd($uri,$input,);
+
+        return View('livre_details', ['livre'=> $livre,
+                                'id'=>$id]. request('id'));
     }
 
 }
