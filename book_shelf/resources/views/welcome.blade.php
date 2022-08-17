@@ -11,6 +11,7 @@
                     <p>titre : {{ $books->titre }}</p>
                     {{-- <a href="focus_livre.php?id={{ $books->id }}"> --}}
                         <a href="{{ URL('/livre_details/'.$books->id )}}"">
+                            {{-- <a href="details.php?id={{ $books->id }}"> --}}
                         {{-- <a href="{{ route("livre_details")}}" class="lien flex" role="detail de {{ $books->titre }}"> --}}
                             
                         <img class="flex"src="{{ asset('image/cover/'.$books->couverture) }}.png" alt={{ $books->titre }} {{ $books->auteur }} cover>
